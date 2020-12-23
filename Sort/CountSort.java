@@ -1,19 +1,19 @@
 public class CountSort{
 	public static int[] countSort(int[] a)
 	{
-		int max=a[0];//ÕÒ³öÊý×é×î´óÖµ
+		int max=a[0];//æ‰¾å‡ºæ•°ç»„æœ€å¤§å€¼
 		for(int i=0;i<a.length;i++)
 		{
 			if(a[i]>max)max=a[i];
 		}
-		int[] counts=new int[max+1];//½¨Á¢¼ÆÊýµÄÊý×é
-		for(int i=0;i<a.length;i++)counts[a[i]]++;//¼ÆÊýÊý×éË÷Òý¾ÍÊÇa[i]µÄÖµ£¬¶ÔÓ¦Êý¾Ý¾ÍÊÇa[i]³öÏÖ´ÎÊý
-		//·µ»Ø½á¹ûÊý×é
+		int[] counts=new int[max+1];//å»ºç«‹è®¡æ•°çš„æ•°ç»„
+		for(int i=0;i<a.length;i++)counts[a[i]]++;//è®¡æ•°æ•°ç»„ç´¢å¼•å°±æ˜¯a[i]çš„å€¼ï¼Œå¯¹åº”æ•°æ®å°±æ˜¯a[i]å‡ºçŽ°æ¬¡æ•°
+		//è¿”å›žç»“æžœæ•°ç»„
 		int index=0;
 		int[] result=new int[a.length];
-		for(int i=0;i<counts.length;i++)//Ã¿¸öÖØÐÂÊäÈë
-			for(int j=0;j<counts[i];j++)//Ò»¸öÒ»¸ö´ò£¬Ë÷ÒýÊÇÊý£¬Ë÷Òý¶ÔÓ¦Êý¾ÝÊÇ³öÏÖ´ÎÊý£¬´ÓÐ¡µ½´ó
-				result[index++]=i;//iºÍjÒ»Ñù ÄÚ²ãÑ­»·ÊÇ´ÎÊý£¬Íâ²ãÊÇ£¡±éÀúµ½j
+		for(int i=0;i<counts.length;i++)//æ¯ä¸ªé‡æ–°è¾“å…¥
+			for(int j=0;j<counts[i];j++)//ä¸€ä¸ªä¸€ä¸ªæ‰“ï¼Œç´¢å¼•æ˜¯æ•°ï¼Œç´¢å¼•å¯¹åº”æ•°æ®æ˜¯å‡ºçŽ°æ¬¡æ•°ï¼Œä»Žå°åˆ°å¤§
+				result[index++]=i;//iå’Œjä¸€æ · å†…å±‚å¾ªçŽ¯æ˜¯æ¬¡æ•°ï¼Œå¤–å±‚æ˜¯ï¼éåŽ†åˆ°j
 		return result;}
 		static int[] a= {1,4,2,5,6,4,6,4};
 	public static void main(String[] args) 
@@ -24,4 +24,4 @@ public class CountSort{
 	}
 	
 }
-
+//æ³¨ï¼Œè¿™ä¸ªä¸ºåˆçº§ç‰ˆæœ¬ï¼Œè¿˜å¾…æ”¹è¿›
